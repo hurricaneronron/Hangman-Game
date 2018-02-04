@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hangman</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+  <title>Hangman</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -19,70 +19,37 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
     <div class="card">
     <div class="card-block">
       <h3 class="card-header">Click <span><button type="button" class="btn btn-primary">here</button></span> to begin!</h3>
     </div>
-    <div class="card-body" id="game-space"></div>
+    <div class="card-body">
+      <p>Letters Guessed: <span id="lettersGuessed"></span></p>
+      <p id="game-space"></p>
+    </div>
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-5">
     <div class="card">
     <div class="card-block">
       <h3 class="card-header">Stats</h3>
     </div>
     <div class="card-body">
-      <p id="guessesLeft">Guesses Remaining:</p>
-      <p id="wins">Wins: </p>
-      <p id="losses">Losses:</p>
+      <p>Guesses Remaining: <span id="guessesLeft"></span></p>
+      <p>Wins: <span id="wins"></span></p>
+      <p>Losses: <span id="losses"></span></p>
     </div>
     </div>
   </div>
+  <div class="col-md-1"></div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-
-$( document ).ready( function ( ) {
-
-  var words = [ "javascript", "monkey", "amazing", "pancake" ]
-
-  var word = words[ Math.floor ( Math.random ( ) * words.length )]
-
-  var guessesLeft = 0
-  var wins = 0
-  var losses = 0
-
-  $( ".btn" ).on( "click" , function ( ) {
-    var answerArray = [ ]
-    for ( var i = 0; i < word.length; i++ ) {
-      answerArray[i] = "  _  "
-    }
-    $( "#game-space" ).append( answerArray )
-    guessesLeft: 12
-  })
-
-  var remainingLetters = word.length
-
-  while ( remainingLetters > 0 ) {
-    //   alert ( answerArray.join (" "))
-    var guess = {}
-    for ( var j = 0; j < word.length; j++ ) {
-      if ( word[j] === guess ) {
-      answerArray[j] = guess
-      remainingLetters--
-      }
-    }
-  }
-
-//   return ( answerArray.join ( " " ))
-//   return ( "Good job! The answer was " + word)
-
-})
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="./assets/javascript/game.js"></script>
 
 </body>
 </html>
