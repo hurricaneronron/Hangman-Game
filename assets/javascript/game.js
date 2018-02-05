@@ -1,6 +1,6 @@
 $( document ).ready( function ( ) {
 
-  var wordBank = [ "javascript", "monkey", "amazing", "pancake" ]
+  var wordBank = [ "doctor", "companion", "cyberman", "dalek", "tardis", "gallifrey", "master", "time", "river", "rose", "torchwood", "earth", "screwdriver", "planet", "ten", "eleven", "twelve", "invasion", "space", "regeneration", "clara", "martha", "donna", "amy", "rory" ]
   var wins = 0
   var losses = 0
   var guessesLeft = 0
