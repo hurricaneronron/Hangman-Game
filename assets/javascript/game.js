@@ -19,24 +19,16 @@ $( document ).ready( function ( ) {
     $( "#guessesLeft" ).text( "12" )
     $( "#lettersGuessed" ).empty()
     $( "#page-heading" ).html( "Doctor Who Hangman Game!" )
-    console.log("playWord: " + playWord)
-    console.log("RemainingLetters: " + remainingLetters)
-    console.log("GuessesLeft: " + guessesLeft)
-    console.log("wins: " + wins)
-    console.log("Losses: " + losses)
     
     $( document ).on( "keyup",  function ( e )  {
       var input = String.fromCharCode(e.which)
-      console.log("Input: " + input)
       var char = input.toLowerCase()
-      console.log("char: " + char)
       
       var str = playWord
       for( var i = 0; i < str.length; i++ ) {
         str[i] = " "
       }
       var check = str.includes( char )
-      console.log("check: " + check)
       
       if( check === true ) {
         for( var i = 0; i < playWord.length; i++ ) {
@@ -46,7 +38,6 @@ $( document ).ready( function ( ) {
           }
         }
         $( "#game-space" ).text( wordDisplay.join( " " ) )
-        console.log( "RemainingLetters: " + remainingLetters )
       }
       
       if( check === false ) {
